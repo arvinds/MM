@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-MM::Application.config.secret_token = 'bd64f8ce821628ae5d3aec4cc393df53ba70e97c4a1e98420d677ee15736c6d8424de6f8e777de6a1fab7d23a7822654f1149ecaea3f2faf4baffdbe4a775f6d'
+MM::Application.config.secret_token = 'f6c1a2bbd1b38e176b302a95d928fda7f3c7f0715a7bbe65f0e06236471602b778381bb7cd6572635b988db0894ecbeae74f9e0c8e0f68d42d2fd44134e48f4b'
