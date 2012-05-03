@@ -1,0 +1,44 @@
+<%= form_for @slot do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :ride_slot_id %><br />
+    <%= f.number_field :ride_slot_id %>
+  </p>
+  <p>
+    <%= f.label :user_id %><br />
+    <%= f.number_field :user_id %>
+  </p>
+  <p>
+    <%= f.label :from_loc_str %><br />
+    <%= f.text_field :from_loc_str %>
+  </p>
+  <p>
+    <%= f.label :to_loc_str %><br />
+    <%= f.text_field :to_loc_str %>
+  </p>
+  <p>
+    <%= f.label :from_datetime %><br />
+    <%= f.date_select :from_datetime %>
+  </p>
+  <p>
+    <%= f.label :to_datetime %><br />
+    <%= f.date_select :to_datetime %>
+  </p>
+  <p>
+    <%= f.label :from_flexible %><br />
+    <%= f.check_box :from_flexible %>
+  </p>
+  <p>
+    <%= f.label :to_flexible %><br />
+    <%= f.check_box :to_flexible %>
+  </p>
+  <p>
+    <%= f.label :price %><br />
+    <%= f.number_field :price %>
+  </p>
+  <p>
+    <%= f.label :number_of_seats %><br />
+    <%= f.number_field :number_of_seats %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

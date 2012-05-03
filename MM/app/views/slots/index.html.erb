@@ -1,0 +1,35 @@
+<% title "Slots" %>
+
+<table>
+  <tr>
+    <th>Ride Slot</th>
+    <th>User</th>
+    <th>From Loc Str</th>
+    <th>To Loc Str</th>
+    <th>From Datetime</th>
+    <th>To Datetime</th>
+    <th>From Flexible</th>
+    <th>To Flexible</th>
+    <th>Price</th>
+    <th>Number Of Seats</th>
+  </tr>
+  <% for slot in @slots %>
+    <tr>
+      <td><%= slot.ride_slot_id %></td>
+      <td><%= slot.user_id %></td>
+      <td><%= slot.from_loc_str %></td>
+      <td><%= slot.to_loc_str %></td>
+      <td><%= slot.from_datetime %></td>
+      <td><%= slot.to_datetime %></td>
+      <td><%= slot.from_flexible %></td>
+      <td><%= slot.to_flexible %></td>
+      <td><%= slot.price %></td>
+      <td><%= slot.number_of_seats %></td>
+      <td><%= link_to "Show", slot %></td>
+      <td><%= link_to "Edit", edit_slot_path(slot) %></td>
+      <td><%= link_to "Destroy", slot, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Slot", new_slot_path %></p>
