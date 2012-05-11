@@ -1,6 +1,6 @@
 MM::Application.routes.draw do
 
-  root :to => 'welcome#index'
+  #root :to => 'welcome#index'
 
   resources :slots
 
