@@ -1,0 +1,16 @@
+<% title "Offer" %>
+
+<p>
+  <strong>Ride Slot:</strong>
+  <%= @offer.ride_slot_id %>
+</p>
+<p>
+  <strong>User:</strong>
+  <%= @offer.user_id %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_offer_path(@offer) %> |
+  <%= link_to "Destroy", @offer, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", offers_path %>
+</p>
