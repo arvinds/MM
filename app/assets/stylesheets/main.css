@@ -1,19 +1,20 @@
 body {
 	padding :0px;
 	margin: 0px;
-	background : #666;
 	font-family: "Lucida Grande","Lucida Sans Unicode",helvetica,verdana,arial,sans-serif;
+	background : #DDD;
 	font-size:12px;
 }
 
 header {
-	background: #001337;
-	color : #FFF;
+	background: #001337 url('back.png');
+	color : #333;
 	width: 100%;
-	height : 50px;
+	height : 40px;
 	box-shadow: 0px 2px 5px 1px #111;
 	margin-bottom:30px;
 	border-bottom : 1px solid #000;
+	font-weight:bold;
 }
 
 div.centerbox {
