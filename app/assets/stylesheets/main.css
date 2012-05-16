@@ -2,7 +2,7 @@ body {
 	padding :0px;
 	margin: 0px;
 	font-family: "Lucida Grande","Lucida Sans Unicode",helvetica,verdana,arial,sans-serif;
-	background : #DDD;
+	background : url('back.png') #DDD;
 	font-size:12px;
 }
 
@@ -21,12 +21,6 @@ div.centerbox {
 	width :1000px;
 	margin : auto;
 	text-align:left;
-}
-
-#container {
-	padding : 10px;
-	background: #EEE;
-	box-shadow : 0px 0px 10px 2px;
 }
 
 div.mm-logo {
