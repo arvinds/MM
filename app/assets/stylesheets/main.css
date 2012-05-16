@@ -7,7 +7,7 @@ body {
 }
 
 header {
-	background: #001337 url('back.png');
+	background: url('header_background.png') #AAA;
 	color : #333;
 	width: 100%;
 	height : 40px;
