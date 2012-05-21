@@ -1,7 +1,14 @@
 MM::Application.routes.draw do
 
   root :to => 'index#index'
-
+  
+  # About page
+  match 'about' => 'index#about'
+  # How It Works page
+  match 'howitworks' => 'index#howitworks'
+  # Terms And Conditions
+  match 'terms' => 'index#terms'
+  
   resources :slots
 
   resources :offers

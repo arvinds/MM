@@ -15,17 +15,35 @@
 					MileMeet :)
 				</div>
 				<div class="mm-settings">
-					Sushant Patankar | Log Out
+					<a id="sign_in" href="">Sign In</a>
 				</div>
 			</div>
 		</header>
-		<div id="container" class="centerbox">
-		  <% flash.each do |name, msg| %>
-			<%= content_tag :div, msg, :id => "flash_#{name}" %>
-		  <% end %>
-		  <%= content_tag :h1, yield(:title) if show_title? %>
-		  <%= yield %>
+		<div id="page" class="centerbox">
+			<div class="content-container">
+				<div class="content-body">			
+				<% flash.each do |name, msg| %>
+				<%= content_tag :div, msg, :id => "flash_#{name}" %>
+				<% end %>
+				<%= content_tag :h1, yield(:title) if show_title? %>
+				<%= yield %>
+				</div>
+			</div>
+			<div class="h-separator"></div>
+			<div class="menu">
+				<a href="about">About</a>
+				<a href="howitworks">How It Works</a>
+				<a href="terms">Terms And Conditions</a>
+			</div>
+			<div class="copyright">
+				&copy; Milemeet.com Beta 2012
+			</div>
 		</div>
+	</div>
+	<div class="hidden" id="sign_in_dropdown">
+		<button id="linked_in_auth">
+			<img src="http://www.jobtactoe.com/mod/linkedin/graphics/linkedin_signin.png" />
+		</button>
 	</div>
   </body>
 </html>
