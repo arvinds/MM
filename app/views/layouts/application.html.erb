@@ -6,8 +6,13 @@
     <%= javascript_include_tag :application %>
     <%= csrf_meta_tag %>
     <%= yield(:head) %>
+	<script type="text/javascript" src="http://platform.linkedin.com/in.js">
+		api_key : cm94q465rlxo
+		authorize : true
+	</script>
   </head>
   <body>
+
 	<div class="content">
 		<header>
 			<div class='centerbox'>
@@ -40,10 +45,13 @@
 			</div>
 		</div>
 	</div>
+
 	<div class="hidden" id="sign_in_dropdown">
-		<button id="linked_in_auth">
-			
-		</button>
+		<div class="sign-in-buttons">
+			<script type="in/Login">
+				Hello, <?js= firstName ?> <?js= lastName ?>.
+			</script>
+		</div>
 	</div>
   </body>
 </html>

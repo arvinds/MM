@@ -26,4 +26,5 @@ $(document).ready(function() {
 			$('#sign_in_dropdown').stop().fadeOut('fast').addClass('hidden');
 		}
 	});
+
 });
