@@ -76,47 +76,7 @@ button.black-button:active {
 	font-size:14px;
 }
 
-// Sign in begin
 
-#sign_in {
-	font-weight:normal;
-	color : #EEE;
-	text-decoration:none;
-	padding:2px 5px;
-	background: #003556;
-	background: -moz-linear-gradient(center top , #007AD0, #003556) repeat scroll 0 0 transparent;
-	background: -webkit-gradient(linear, top, bottom, from( #007AD0), to(#003556));
-	border-radius:2px;
-}
-
-#sign_in:hover{
-	background: -moz-linear-gradient(center top, #007AD0, #001826);
-	background: -webkit-gradient(linear, top, bottom, from( #007AD0), to(#001826));
-}
-
-#sign_in:active{
-	background: -moz-linear-gradient(center top, #007AD0, #111);
-	background: -webkit-gradient(linear, top, bottom, from( #007AD0), to(#111));
-}
-
-#sign_in_dropdown {
-	width: 200px;
-	height:60px;
-	position:absolute;
-	background:#EEE;
-	z-index:1px;
-	box-shadow: 0px 0px 3px 1px #666;
-	display:none;
-	border-radius: 5px;
-	text-align:center;
-}
-
-#linked_in_auth {
-	margin: 10px auto;
-	padding:0px;
-}
-
-// Sign in End
 
 div.menu {
 	padding: 10px 5px;
@@ -189,6 +149,48 @@ div.h-separator{
 	background:#CCC;
 	margin: 75px auto 5px auto;
 }
+
+/* Sign in */
+
+#sign_in {
+	font-weight:normal;
+	color : #EEE;
+	text-decoration:none;
+	padding:2px 5px;
+	background: #003556;
+	background: -moz-linear-gradient(center top , #007AD0, #003556) repeat scroll 0 0 transparent;
+	background: -webkit-gradient(linear, top, bottom, from( #007AD0), to(#003556));
+	border-radius:2px;
+}
+
+#sign_in:hover{
+	background: -moz-linear-gradient(center top, #007AD0, #001826);
+	background: -webkit-gradient(linear, top, bottom, from( #007AD0), to(#001826));
+}
+
+#sign_in:active{
+	background: -moz-linear-gradient(center top, #007AD0, #111);
+	background: -webkit-gradient(linear, top, bottom, from( #007AD0), to(#111));
+}
+
+#sign_in_dropdown {
+	width: 200px;
+	height:60px;
+	position:absolute;
+	background:#EEE;
+	z-index:1px;
+	box-shadow: 0px 0px 3px 1px #666;
+	display:none;
+	border-radius: 5px;
+	text-align:center;
+}
+
+#linked_in_auth {
+	margin: 10px auto;
+	padding:0px;
+}
+
+/* Sign in End */
 
 .hidden {
 	display:none;
