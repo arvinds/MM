@@ -9,9 +9,10 @@ MM::Application.routes.draw do
   # Terms And Conditions
   match 'terms' => 'index#terms'
   
-  resources :slots
-
-  resources :offers
+  # Ride Resource with Slot subresource
+  resources :rides do
+	resources :slots
+  end
 
   resources :users
 
