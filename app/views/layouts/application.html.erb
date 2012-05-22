@@ -1,6 +1,7 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
   <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title><%= content_for?(:title) ? yield(:title) : "Milemeet.com" %></title>
     <%= stylesheet_link_tag :application %>
     <%= javascript_include_tag :application %>
@@ -9,6 +10,8 @@
 	<script type="text/javascript" src="http://platform.linkedin.com/in.js">
 		api_key : cm94q465rlxo
 		authorize : true
+	</script>
+	<script charset="UTF-8" type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0">
 	</script>
   </head>
   <body>
