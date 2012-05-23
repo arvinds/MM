@@ -1,3 +1,7 @@
+MapServices = {};
+
+MapServices.map = null;
+
 $(document).ready(function() {
 
 	var map = null;
@@ -12,10 +16,6 @@ $(document).ready(function() {
 			$('#sign_in').trigger('click');
 		}
 		
-		if (($(e.target).closest('#map_container').length == 0) &&
-			!($('#to_from_container').find('input').is(':focus'))) {
-			$('#map_container').fadeOut('slow').addClass('hidden');
-		}
 	});
 
 	// Bind the sign in click dropdown
@@ -34,28 +34,86 @@ $(document).ready(function() {
 		}
 	});
 	
-	$('#from_select').on('focus', function(event) {
-		var $this = $(this);
-		var top = $this.offset().top;
-		var left = $this.offset().left;
-		if (!map) {
-			loadMap();
-		}
-		$('#map_container').removeClass('hidden').css({
-			top : top + $this.outerHeight() + "px",
-			left : left
-		}).fadeIn('slow');
+	$('#from_select').autocomplete({
+		source : function(request, response) {
+			$.ajax({
+                    url: "http://dev.virtualearth.net/REST/v1/Locations",
+                    dataType: "jsonp",
+                    data: {
+                        key: "	Aq1YIJbPm7C4HzFc_271JbEI8BoEIoccyB_g10Fa21jupGJKBG-Ocv0Cbmbt0cet",
+                        q: request.term
+                    },
+                    jsonp: "jsonp",
+                    success: function (data) {
+                        var result = data.resourceSets[0];
+                        if (result) {
+                            if (result.estimatedTotal > 0) {
+                                response($.map(result.resources, function (item) {
+                                    return {
+                                        data: item,
+                                        label: item.name,
+                                        value: item.name
+                                    }
+                                }));
+                            }
+                        }
+                    }
+                });
+		},
+		select : function(event, ui) {
+			var result = ui.item.data;
+			var location = new Microsoft.Maps.Location(result.point.coordinates[0], result.point.coordinates[1])
+			var pin = new Microsoft.Maps.Pushpin(location);
+			MapServices.map.setView({ center: location, zoom: 10 });
+			MapServices.map.entities.push(pin);
+		},
+		minLength : 2
 	});
 	
-	var loadMap = function() {
+	$('#to_select').autocomplete({
+		source : function(request, response) {
+			$.ajax({
+                    url: "http://dev.virtualearth.net/REST/v1/Locations",
+                    dataType: "jsonp",
+                    data: {
+                        key: "	Aq1YIJbPm7C4HzFc_271JbEI8BoEIoccyB_g10Fa21jupGJKBG-Ocv0Cbmbt0cet",
+                        q: request.term
+                    },
+                    jsonp: "jsonp",
+                    success: function (data) {
+                        var result = data.resourceSets[0];
+                        if (result) {
+                            if (result.estimatedTotal > 0) {
+                                response($.map(result.resources, function (item) {
+                                    return {
+                                        data: item,
+                                        label: item.name,
+                                        value: item.name
+                                    }
+                                }));
+                            }
+                        }
+                    }
+                });
+		},
+		select : function(event, ui) {
+			var result = ui.item.data;
+			var location = new Microsoft.Maps.Location(result.point.coordinates[0], result.point.coordinates[1])
+			var pin = new Microsoft.Maps.Pushpin(location);
+			MapServices.map.setView({ center: location, zoom: 10 });
+			MapServices.map.entities.push(pin);
+		},
+		minLength : 2
+	});
+	
+	if (!MapServices.map) {
 		var mapOptions = {
 			credentials:"	Aq1YIJbPm7C4HzFc_271JbEI8BoEIoccyB_g10Fa21jupGJKBG-Ocv0Cbmbt0cet",
 			disableBirdseye : true,
 			showDashboard : false,
 			mapTypeId: Microsoft.Maps.MapTypeId.road
 		};
-		map = new Microsoft.Maps.Map(document.getElementById("map_container"), mapOptions);
+		MapServices.map = new Microsoft.Maps.Map(document.getElementById("map_container"), mapOptions);
 	}
-	
-	
+
 });
