@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  driver_id: 1
+  from_loc_str: MyString
+  from_loc_lat: 1.5
+  from_loc_lon: 1.5
+  to_loc_str: MyString
+  to_loc_lon: 1.5
+  to_loc_lat: 1.5
+  from_datetime: 2012-05-23
+  to_datetime: 2012-05-23
+  from_flexible: false
+  to_flexible: false
+
+two:
+  driver_id: 1
+  from_loc_str: MyString
+  from_loc_lat: 1.5
+  from_loc_lon: 1.5
+  to_loc_str: MyString
+  to_loc_lon: 1.5
+  to_loc_lat: 1.5
+  from_datetime: 2012-05-23
+  to_datetime: 2012-05-23
+  from_flexible: false
+  to_flexible: false

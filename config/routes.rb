@@ -1,5 +1,7 @@
 MM::Application.routes.draw do
 
+  resources :rides
+
   root :to => 'index#index'
   
   # About page
@@ -11,7 +13,7 @@ MM::Application.routes.draw do
   
   # Ride Resource with Slot subresource
   resources :rides do
-	resources :slots
+	resources :seats
   end
 
   resources :users

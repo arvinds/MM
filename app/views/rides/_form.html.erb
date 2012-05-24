@@ -1,12 +1,61 @@
-<%= form_for @offer do |f| %>
-  <%= f.error_messages %>
-  <p>
-    <%= f.label :ride_slot_id %><br />
-    <%= f.number_field :ride_slot_id %>
-  </p>
-  <p>
-    <%= f.label :user_id %><br />
-    <%= f.number_field :user_id %>
-  </p>
-  <p><%= f.submit %></p>
+<%= form_for(@ride) do |f| %>
+  <% if @ride.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ride.errors.count, "error") %> prohibited this ride from being saved:</h2>
+
+      <ul>
+      <% @ride.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :driver_id %><br />
+    <%= f.number_field :driver_id %>
+  </div>
+  <div class="field">
+    <%= f.label :from_loc_str %><br />
+    <%= f.text_field :from_loc_str %>
+  </div>
+  <div class="field">
+    <%= f.label :from_loc_lat %><br />
+    <%= f.text_field :from_loc_lat %>
+  </div>
+  <div class="field">
+    <%= f.label :from_loc_lon %><br />
+    <%= f.text_field :from_loc_lon %>
+  </div>
+  <div class="field">
+    <%= f.label :to_loc_str %><br />
+    <%= f.text_field :to_loc_str %>
+  </div>
+  <div class="field">
+    <%= f.label :to_loc_lon %><br />
+    <%= f.text_field :to_loc_lon %>
+  </div>
+  <div class="field">
+    <%= f.label :to_loc_lat %><br />
+    <%= f.text_field :to_loc_lat %>
+  </div>
+  <div class="field">
+    <%= f.label :from_datetime %><br />
+    <%= f.date_select :from_datetime %>
+  </div>
+  <div class="field">
+    <%= f.label :to_datetime %><br />
+    <%= f.date_select :to_datetime %>
+  </div>
+  <div class="field">
+    <%= f.label :from_flexible %><br />
+    <%= f.check_box :from_flexible %>
+  </div>
+  <div class="field">
+    <%= f.label :to_flexible %><br />
+    <%= f.check_box :to_flexible %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
 <% end %>

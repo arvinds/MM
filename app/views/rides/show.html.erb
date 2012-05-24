@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Driver:</b>
+  <%= @ride.driver_id %>
+</p>
+
+<p>
+  <b>From loc str:</b>
+  <%= @ride.from_loc_str %>
+</p>
+
+<p>
+  <b>From loc lat:</b>
+  <%= @ride.from_loc_lat %>
+</p>
+
+<p>
+  <b>From loc lon:</b>
+  <%= @ride.from_loc_lon %>
+</p>
+
+<p>
+  <b>To loc str:</b>
+  <%= @ride.to_loc_str %>
+</p>
+
+<p>
+  <b>To loc lon:</b>
+  <%= @ride.to_loc_lon %>
+</p>
+
+<p>
+  <b>To loc lat:</b>
+  <%= @ride.to_loc_lat %>
+</p>
+
+<p>
+  <b>From datetime:</b>
+  <%= @ride.from_datetime %>
+</p>
+
+<p>
+  <b>To datetime:</b>
+  <%= @ride.to_datetime %>
+</p>
+
+<p>
+  <b>From flexible:</b>
+  <%= @ride.from_flexible %>
+</p>
+
+<p>
+  <b>To flexible:</b>
+  <%= @ride.to_flexible %>
+</p>
+
+
+<%= link_to 'Edit', edit_ride_path(@ride) %> |
+<%= link_to 'Back', rides_path %>
