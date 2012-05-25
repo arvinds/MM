@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-	var map = new MapManager($('#map_container')[0]);
+	var map = new MapManager(document.getElementById('map_container'));
 	
 	$('#choice input').val('');
 
@@ -34,14 +34,16 @@ $(document).ready(function() {
 	
 	$('#from_select').autocomplete({
 		source : function(request, response) {
-			map.removeLocationPin('from');
+			map.removeLocationMarker('from');
 			map.findLocation(request, response);
 		},
 		select : function(event, ui) {
-			var result = ui.item.data;
-			map.addLocationPin('from', new Microsoft.Maps.Location(result.point.coordinates[0], result.point.coordinates[1]));
-			if (map.hasLocationPinId('from') && map.hasLocationPinId('to')) {
-				map.calculateRoute([ 'from', 'to' ]);
+			var result = ui.item.data;	
+			if (map.hasLocationMarkerId('to')) {
+				map.addLocationMarker('from', result.geometry.location);
+				map.calculateRoute();
+			} else {
+				map.addLocationMarker('from', result.geometry.location, true);
 			}
 		},
 		minLength : 2
@@ -49,14 +51,16 @@ $(document).ready(function() {
 	
 	$('#to_select').autocomplete({
 		source : function(request, response) {
-			map.removeLocationPin('to');
+			map.removeLocationMarker('to');
 			map.findLocation(request, response);
 		},
 		select : function(event, ui) {
 			var result = ui.item.data;
-			map.addLocationPin('to', new Microsoft.Maps.Location(result.point.coordinates[0], result.point.coordinates[1]));
-			if (map.hasLocationPinId('from') && map.hasLocationPinId('to')) {
-				map.calculateRoute([ 'from', 'to' ]);
+			if (map.hasLocationMarkerId('from')) {
+				map.addLocationMarker('to', result.geometry.location);
+				map.calculateRoute();
+			} else {
+				map.addLocationMarker('to', result.geometry.location, true);
 			}
 		},
 		minLength : 2
@@ -80,8 +84,14 @@ $(document).ready(function() {
 		$('#choice').animate({
 			opacity:0
 		}, 300, function() { $(this).hide(); $('#map_container').animate({
-			width:"940px"
-		}, 500);});
+				width:"940px"
+			}, {
+				duration : 500,
+				step : function() {
+					map.checkResize();
+				}
+			});
+		});
 	});
 
 });
