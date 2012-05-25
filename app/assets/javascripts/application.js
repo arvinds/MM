@@ -12,5 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require external/jquery-ui-1.8.20.custom.min.js
 //= require main.js
+//= require MapManager.js
 //= require_tree .

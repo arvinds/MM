@@ -1,10 +1,8 @@
-MapServices = {};
-
-MapServices.map = null;
-
 $(document).ready(function() {
 
-	var map = null;
+	var map = new MapManager($('#map_container')[0]);
+	
+	$('#choice input').val('');
 
 	// Body click bindings
 	$('body').on('click', function(e) {
@@ -36,84 +34,54 @@ $(document).ready(function() {
 	
 	$('#from_select').autocomplete({
 		source : function(request, response) {
-			$.ajax({
-                    url: "http://dev.virtualearth.net/REST/v1/Locations",
-                    dataType: "jsonp",
-                    data: {
-                        key: "	Aq1YIJbPm7C4HzFc_271JbEI8BoEIoccyB_g10Fa21jupGJKBG-Ocv0Cbmbt0cet",
-                        q: request.term
-                    },
-                    jsonp: "jsonp",
-                    success: function (data) {
-                        var result = data.resourceSets[0];
-                        if (result) {
-                            if (result.estimatedTotal > 0) {
-                                response($.map(result.resources, function (item) {
-                                    return {
-                                        data: item,
-                                        label: item.name,
-                                        value: item.name
-                                    }
-                                }));
-                            }
-                        }
-                    }
-                });
+			map.removeLocationPin('from');
+			map.findLocation(request, response);
 		},
 		select : function(event, ui) {
 			var result = ui.item.data;
-			var location = new Microsoft.Maps.Location(result.point.coordinates[0], result.point.coordinates[1])
-			var pin = new Microsoft.Maps.Pushpin(location);
-			MapServices.map.setView({ center: location, zoom: 10 });
-			MapServices.map.entities.push(pin);
+			map.addLocationPin('from', new Microsoft.Maps.Location(result.point.coordinates[0], result.point.coordinates[1]));
+			if (map.hasLocationPinId('from') && map.hasLocationPinId('to')) {
+				map.calculateRoute([ 'from', 'to' ]);
+			}
 		},
 		minLength : 2
 	});
 	
 	$('#to_select').autocomplete({
 		source : function(request, response) {
-			$.ajax({
-                    url: "http://dev.virtualearth.net/REST/v1/Locations",
-                    dataType: "jsonp",
-                    data: {
-                        key: "	Aq1YIJbPm7C4HzFc_271JbEI8BoEIoccyB_g10Fa21jupGJKBG-Ocv0Cbmbt0cet",
-                        q: request.term
-                    },
-                    jsonp: "jsonp",
-                    success: function (data) {
-                        var result = data.resourceSets[0];
-                        if (result) {
-                            if (result.estimatedTotal > 0) {
-                                response($.map(result.resources, function (item) {
-                                    return {
-                                        data: item,
-                                        label: item.name,
-                                        value: item.name
-                                    }
-                                }));
-                            }
-                        }
-                    }
-                });
+			map.removeLocationPin('to');
+			map.findLocation(request, response);
 		},
 		select : function(event, ui) {
 			var result = ui.item.data;
-			var location = new Microsoft.Maps.Location(result.point.coordinates[0], result.point.coordinates[1])
-			var pin = new Microsoft.Maps.Pushpin(location);
-			MapServices.map.setView({ center: location, zoom: 10 });
-			MapServices.map.entities.push(pin);
+			map.addLocationPin('to', new Microsoft.Maps.Location(result.point.coordinates[0], result.point.coordinates[1]));
+			if (map.hasLocationPinId('from') && map.hasLocationPinId('to')) {
+				map.calculateRoute([ 'from', 'to' ]);
+			}
 		},
 		minLength : 2
 	});
 	
-	if (!MapServices.map) {
-		var mapOptions = {
-			credentials:"	Aq1YIJbPm7C4HzFc_271JbEI8BoEIoccyB_g10Fa21jupGJKBG-Ocv0Cbmbt0cet",
-			disableBirdseye : true,
-			showDashboard : false,
-			mapTypeId: Microsoft.Maps.MapTypeId.road
-		};
-		MapServices.map = new Microsoft.Maps.Map(document.getElementById("map_container"), mapOptions);
-	}
+	$('#when_select').datepicker();
+	
+	$('.black-button').click(function() {
+		if ($('#from_select').val().trim() == '') {
+			alert("Please choose a starting location");
+			return;
+		}
+		if ($('#to_select').val().trim() == '') {
+			alert("Please choose a destination");
+			return;
+		}
+		if ($('#when_select').val().trim() == '') {
+			alert("Please provide a valid date");
+			return;
+		}
+		$('#choice').animate({
+			opacity:0
+		}, 300, function() { $(this).hide(); $('#map_container').animate({
+			width:"940px"
+		}, 500);});
+	});
 
 });

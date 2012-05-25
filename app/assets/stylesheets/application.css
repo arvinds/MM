@@ -9,6 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require main.css
+ *= require jquery-ui/jquery-ui-1.8.20.custom.css
  *= require_self
  *= require_tree .
 */
