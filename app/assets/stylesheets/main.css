@@ -193,6 +193,11 @@ div.h-separator{
 
 /* Sign in End */
 
+div.loadbar {
+	height : 15px;
+	background : no-repeat center center url('loadbar.gif');
+}
+
 .hidden {
 	display:none;
 }
