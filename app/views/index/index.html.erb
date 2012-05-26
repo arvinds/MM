@@ -1,4 +1,5 @@
-<div id='choice' class="whitebox">
+
+<div id='selection_box' class="whitebox">
 	<h3>Want to go somewhere?</h1>
 	<div id="to_from_container">
 		<div class="from">
@@ -11,10 +12,19 @@
 			<div class="input-label">When</div><input id='when_select' type="text" val="" />
 		</div>
 		<div style="position:absolute;bottom:0px;">
-		<button class="black-button">Post a Ride</button><button class="black-button">Find a Ride</button>
+		<button id="post_ride" class="black-button">Post a Ride</button><button id="find_ride" class="black-button">Find a Ride</button>
 		</div>
 	</div>
 </div>
 <div id='map_container' class="whitebox">
 </div>
 <div style="clear:both"></div>
+<div id='rides_list' class='whitebox'>
+	<div class="rides-loading">
+		<div>Tring to find you a ride</div>
+		<div><img src="http://motorhomebuyerscanada.com/wp-content/plugins/formidable/images/loading_bar.gif" /></div>
+	</div>
+	<div class="rides hidden">
+	</div>
+</div>
+

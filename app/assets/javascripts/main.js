@@ -68,30 +68,66 @@ $(document).ready(function() {
 	
 	$('#when_select').datepicker();
 	
-	$('.black-button').click(function() {
-		if ($('#from_select').val().trim() == '') {
+	$('#find_ride').on('click', function() {
+	
+		var $from = $('#from_select');
+		var $to = $('#to_select');
+		var $when = $('#when_select');
+		var $ridesList = $('#rides_list');
+		var $rides = $('div.rides');
+		var $ridesLoad = $('div.rides-loading');
+		
+		// Load rides information based on given locations and date
+		var loadRides = function() {
+		
+			var fetchRides = function(callback) {
+				$.ajax({
+					url : '/rides',
+					dataType : 'html',
+					success : function(data) {
+						callback(data);
+					}
+				});
+			}
+			
+			$rides.stop().animate({ opacity : 0 }, 300, function() {
+				$(this).addClass('hidden');
+				$ridesLoad.stop().css({ opacity : 0 }).show().animate({ opacity : 1}, 300, function() {
+					fetchRides(function(data) {
+						$ridesLoad.stop().animate({ opacity : 0}, 300, function() {
+							$(this).hide();
+							$rides.html('').append(data).removeClass('hidden').animate({ opacity : 1}, 300);
+						});
+					});
+				});
+			});
+		}
+	
+		if ($from.val().trim() == '') {
 			alert("Please choose a starting location");
 			return;
 		}
-		if ($('#to_select').val().trim() == '') {
+		if ($to.val().trim() == '') {
 			alert("Please choose a destination");
 			return;
 		}
-		if ($('#when_select').val().trim() == '') {
+		if ($when.val().trim() == '') {
 			alert("Please provide a valid date");
 			return;
 		}
-		$('#choice').animate({
-			opacity:0
-		}, 300, function() { $(this).hide(); $('#map_container').animate({
-				width:"940px"
-			}, {
-				duration : 500,
-				step : function() {
-					map.checkResize();
-				}
+		if (!$ridesList.hasClass('animated')) {
+			var ridesListHeight = $ridesList.height();
+			
+			$ridesList.addClass('animated').css({ height : "0px", opacity : 0 }).show().animate({
+				height : ridesListHeight + "px"
+			}, 300, function() {
+				$(this).css('height', 'auto').animate({ opacity : 1}, 300, loadRides);
 			});
-		});
+		} else {
+			loadRides();
+		}
+		
 	});
+
 
 });
