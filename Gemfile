@@ -47,3 +47,13 @@ gem 'jquery-rails'
 gem "nifty-generators", '>= 0.4.0', :group => :development
 
 gem "mocha", :group => :test
+
+gem "rails3-generators"
+gem "dynamic_form"
+
+#gem "ruby-openid"
+#gem "rack-openid", ">=0.2.1", :require => "rack/openid"
+gem "authlogic"
+#gem "oauth"
+#gem "oauth2"
+#gem "authlogic-connect"

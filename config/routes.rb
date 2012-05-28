@@ -1,6 +1,14 @@
 MM::Application.routes.draw do
 
+  get "user_sessions/new"
+
   resources :rides
+
+  resources :user_sessions
+
+  match 'login' => "user_sessions#new",      :as => :login
+  match 'logout' => "user_sessions#destroy", :as => :logout
+
 
   root :to => 'index#index'
   

@@ -1,0 +1,9 @@
+connect:
+  facebook:
+    key: "394401523931734"
+    secret: "af45369fa25fd1684832427b971787a8"
+    label: "Facebook"
+  linked_in:
+    key: "my_key"
+    secret: "my_secret"
+
