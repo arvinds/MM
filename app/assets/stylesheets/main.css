@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {
 	padding :0px;
 	margin: 0px;
@@ -206,3 +207,224 @@ div.sign-in-buttons {
 	margin: 10px auto;
 	
 }
+=======
+body {
+	padding :0px;
+	margin: 0px;
+	font-family: "Lucida Grande","Lucida Sans Unicode",helvetica,verdana,arial,sans-serif;
+	background : url('back.png') #FFF;
+	font-size:12px;
+}
+
+header {
+	background: url('header_background.png') #AAA;
+	color : #333;
+	width: 100%;
+	height : 40px;
+	box-shadow: 0px 2px 5px 1px #111;
+	margin-bottom:20px;
+	border-bottom : 1px solid #000;
+	font-weight:bold;
+}
+
+input[type='text'] {
+	margin:0px;
+	border:0px;
+	padding:5px;
+	width: 163px;
+	border:1px solid #333;
+	border-radius: 0px 5px 5px 0px;
+	background: #FFF;
+	background: -moz-linear-gradient(top,  #FFF,  #EFF7F1);
+	background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#EFF7F1));
+}
+
+a {
+	padding: 0px 10px;
+	color:#003556;
+	font-weight:normal;
+	text-decoration:none;
+}
+
+a:hover {
+	color: #007AD0;
+}
+
+button {
+	border:0px;
+	margin:10px;
+	border-radius:5px;
+	padding: 0px 10px;
+	cursor:pointer;
+}
+
+button.black-button {
+	width:100px;
+	float:left;
+	color:#FFF;
+	background:#333;
+	line-height:28px;
+	background: -moz-linear-gradient(top,  #555,  #000E00);
+	background: -webkit-gradient(linear, left top, left bottom, from(#555), to(#000E00));
+}
+
+button.black-button:hover {
+	background: #111;
+	background: -moz-linear-gradient(top,  #777,  #000E00);
+	background: -webkit-gradient(linear, left top, left bottom, from(#777), to(#000E00));
+}
+
+button.black-button:active {
+	background: #555;
+	background: -moz-linear-gradient(top,  #555,  #000E00);
+	background: -webkit-gradient(linear, left top, left bottom, from(#555), to(#000E00));
+	cursor:pointer;
+}
+
+#page {
+	text-align:right;
+	margin: 75px auto 25px auto;
+	font-size:14px;
+}
+
+
+
+div.menu {
+	padding: 10px 5px;
+	text-align:center;
+}
+
+div.input-label {
+	padding: 0px 10px;
+	width:55px;
+	float:left;
+	margin:0px;
+	color:#FFF;
+	background:#333;
+	border-radius: 5px 0px 0px 5px;
+	line-height:28px;
+	background: -moz-linear-gradient(top,  #555,  #000E00);
+	background: -webkit-gradient(linear, left top, left bottom, from(#555), to(#000E00));	
+}
+
+div.input-label:before, div.input-label:after {
+	content: ".";
+    display: block;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+}
+
+div.centerbox {
+	width :1000px;
+	margin : auto;
+	text-align:left;
+}
+
+div.mm-logo {
+	float:left;
+	padding : 10px 0px;
+}
+div.mm-settings {
+	float:right;
+	padding : 10px 0px;
+}
+
+div.content-container{
+    background: none repeat scroll 0 0 #EEE;
+    box-shadow: 0 2px 10px #AAAAAA;
+	border-radius: 10px 10px 0px 0px;
+	overflow:hidden;
+}
+div.content-header {
+	background: #999;
+	height: 30px;
+}
+div.content-body {
+    padding: 10px;
+	overflow:hidden;
+}
+
+div.copyright {
+	text-align:center;
+	color: #333;
+	font-size:12px;
+}
+
+div.h-separator{
+	width: 75%; 
+	height:2px; 
+	background:#CCC;
+	margin: 75px auto 5px auto;
+}
+
+/* Sign in */
+
+#sign_in {
+	font-weight:normal;
+	color : #EEE;
+	text-decoration:none;
+	padding:2px 5px;
+	background: #003556;
+	background: -moz-linear-gradient(center top , #007AD0, #003556) repeat scroll 0 0 transparent;
+	background: -webkit-gradient(linear, left top, left bottom, from( #007AD0), to(#003556));
+	border-radius:2px;
+}
+
+#sign_in:hover{
+	background: -moz-linear-gradient(center top, #007AD0, #001826);
+	background: -webkit-gradient(linear, left top, left bottom, from( #007AD0), to(#001826));
+}
+
+#sign_in:active{
+	background: -moz-linear-gradient(center top, #007AD0, #111);
+	background: -webkit-gradient(linear, left top, left bottom, from( #007AD0), to(#111));
+}
+
+#sign_in_dropdown {
+	width: 200px;
+	height:60px;
+	position:absolute;
+	background:#EEE;
+	z-index:1px;
+	box-shadow: 0px 0px 3px 1px #666;
+	display:none;
+	border-radius: 5px;
+	text-align:center;
+}
+
+#linked_in_auth {
+	margin: 10px auto;
+	padding:0px;
+}
+
+/* Sign in End */
+
+div.loadbar {
+	height : 15px;
+	background : no-repeat center center url('loadbar.gif');
+}
+
+.hidden {
+	display:none;
+}
+
+div.sign-in-buttons {
+	margin: 10px auto;
+	
+}
+
+div.whitebox {
+	float:left;
+	margin:20px; 
+	border:1px solid #DDD;
+	background:#FFF;
+	padding:20px;
+	text-align:center;
+	box-shadow: inset 0px 0px 5px 0px #999;
+	overflow:hidden;
+}
+>>>>>>> 727502d3f97551059bcefb319d1288578cfa3432
