@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 div.whitebox {
 	float:left;
 	margin:20px; 
@@ -50,7 +49,7 @@ div.rides-loading > div {
 	float:none;
 	display:none;
 	padding : 0px;
-=======
+}
 
 h3 {
 	padding-bottom: 10px;
@@ -93,5 +92,4 @@ div.rides-loading > div {
 	float:none;
 	display:none;
 	padding : 0px;
->>>>>>> 727502d3f97551059bcefb319d1288578cfa3432
 }

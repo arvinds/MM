@@ -1,10 +1,9 @@
-<<<<<<< HEAD
 class RidesController < ApplicationController
   # GET /rides
   # GET /rides.json
   def index
     @rides = Ride.closest_from [:from_lat], params[:from_lng]
-
+    @request = params
     respond_to do |format|
       format.html { render :layout => false }
       format.json { render json: @rides }
@@ -179,4 +178,3 @@ class RidesController < ApplicationController
     end
   end
 end
->>>>>>> 727502d3f97551059bcefb319d1288578cfa3432
