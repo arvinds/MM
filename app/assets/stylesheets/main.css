@@ -206,3 +206,14 @@ div.sign-in-buttons {
 	margin: 10px auto;
 	
 }
+
+div.whitebox {
+	float:left;
+	margin:20px; 
+	border:1px solid #DDD;
+	background:#FFF;
+	padding:20px;
+	text-align:center;
+	box-shadow: inset 0px 0px 5px 0px #999;
+	overflow:hidden;
+}

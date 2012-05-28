@@ -3,6 +3,8 @@ class RidesController < ApplicationController
   # GET /rides.json
   def index
     @rides = Ride.all
+	@from_loc = params[:from_loc]
+	@to_loc = params[:to_loc]
 
     respond_to do |format|
       format.html { render :layout => false }

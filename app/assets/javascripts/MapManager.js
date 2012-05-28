@@ -1,6 +1,6 @@
 /**
  * MapManager class
- * Wrapper to MapMarkerg libraries to allow for atomicity of mapMarkerg code
+ * Wrapper to mapping libraries to allow for atomicity of mapping code
  * Provides convenience methods only for executing actions in scope
  */
 
@@ -47,7 +47,6 @@ MapManager.prototype.getLocationMarker = function(id) {
 }
 
 MapManager.prototype.hasLocationMarkerId = function(id) {
-console.log(this.locationMarkers);
 	if (this.locationMarkers[id]) {
 		return true;
 	}

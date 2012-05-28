@@ -1,43 +1,10 @@
-<h1>Listing rides</h1>
+<div class="rides-display">
+	<div class="rides-header">Matching rides for <a id="from_link" class="loc-link" href="#from_link"><%= @from_loc %></a> to <a id="to_link" class="loc-link" href="#to_link"><%= @to_loc %></a></div>
+	<div class="ride">
+	<div>
+	<% @rides.each do |ride| %>
+		<div class="ride">
+		<div>
+	<% end %>
 
-<table>
-  <tr>
-    <th>Driver</th>
-    <th>From loc str</th>
-    <th>From loc lat</th>
-    <th>From loc lon</th>
-    <th>To loc str</th>
-    <th>To loc lon</th>
-    <th>To loc lat</th>
-    <th>From datetime</th>
-    <th>To datetime</th>
-    <th>From flexible</th>
-    <th>To flexible</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @rides.each do |ride| %>
-  <tr>
-    <td><%= ride.driver_id %></td>
-    <td><%= ride.from_loc_str %></td>
-    <td><%= ride.from_loc_lat %></td>
-    <td><%= ride.from_loc_lon %></td>
-    <td><%= ride.to_loc_str %></td>
-    <td><%= ride.to_loc_lon %></td>
-    <td><%= ride.to_loc_lat %></td>
-    <td><%= ride.from_datetime %></td>
-    <td><%= ride.to_datetime %></td>
-    <td><%= ride.from_flexible %></td>
-    <td><%= ride.to_flexible %></td>
-    <td><%= link_to 'Show', ride %></td>
-    <td><%= link_to 'Edit', edit_ride_path(ride) %></td>
-    <td><%= link_to 'Destroy', ride, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Ride', new_ride_path %>
+</div>
