@@ -2,7 +2,7 @@ class RidesController < ApplicationController
   # GET /rides
   # GET /rides.json
   def index
-    @rides = Ride.all
+    @rides = Ride.closest_from [:from_lat], params[:from_lng]
 
     respond_to do |format|
       format.html { render :layout => false }
