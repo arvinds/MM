@@ -2,8 +2,6 @@ $(document).ready(function() {
 
 	var map = new MapManager(document.getElementById('map_container'));
 	
-	$('#choice input').val('');
-	
 	$('#from_select').autocomplete({
 		source : function(request, response) {
 			map.removeLocationMarker('from');
@@ -53,12 +51,18 @@ $(document).ready(function() {
 		var loadRides = function() {
 		
 			var fetchRides = function(callback) {
+				var from_latlang = map.getLocationMarker('from').getPosition();
+				var to_latlang = map.getLocationMarker('to').getPosition();
 				$.ajax({
 					url : '/rides',
 					dataType : 'html',
 					data : {
-						from_loc : $from.val(),
-						to_loc : $to.val()
+						from_string : $from.val(),
+						to_string : $to.val(),
+						from_lat : from_latlang.lat(),
+						from_lng : from_latlang.lng(),
+						to_lat : to_latlang.lat(),
+						to_lng : to_latlang.lng()
 					},
 					success : function(data) {
 						callback(data);
@@ -108,6 +112,5 @@ $(document).ready(function() {
 	$('#post_ride').on('click', function() {
 		location.href = "/rides/new";
 	});
-
 
 });
