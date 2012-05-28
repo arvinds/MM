@@ -27,17 +27,16 @@ div.to{
 	float:right;
 }
 
-div.rides-loading {
+div.subpage-loading {
 	opacity : 0;
 	padding : 20px;
 }
 
-div.rides-loading > div {
+div.subpage-loading > div {
 	margin : 5px 0px;
 }
 
-#rides_list {
-	float:none;
+#subpage {
 	display:none;
 	padding : 0px;
 }
