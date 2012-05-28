@@ -1,10 +1,9 @@
 <div class="rides-display">
-	<div class="rides-header">Matching rides for <a id="from_link" class="loc-link" href="#from_link"><%= @request[:from_string] %></a> to <a id="to_link" class="loc-link" href="#to_link"><%= @request[:to_string] %></a></div>
-	<div class="ride">
-	<div>
+	<div class="rides-header">
+		Matching rides for <a id="from_link" class="loc-link" href="#from_link"><%= @request[:from_string] %></a> to <a id="to_link" class="loc-link" href="#to_link"><%= @request[:to_string] %></a>
+	</div>
 	<% @rides.each do |ride| %>
 		<div class="ride">
 		<div>
 	<% end %>
-
 </div>

@@ -47,7 +47,6 @@ MapManager.prototype.getLocationMarker = function(id) {
 }
 
 MapManager.prototype.hasLocationMarkerId = function(id) {
-console.log(this.locationMarkers);
 	if (this.locationMarkers[id]) {
 		return true;
 	}

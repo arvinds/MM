@@ -39,9 +39,10 @@ class RidesController < ApplicationController
   # GET /rides/new.json
   def new
     @ride = Ride.new
+	@request = params
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html { render :layout => false }
       format.json { render json: @ride }
     end
   end
