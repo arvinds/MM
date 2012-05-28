@@ -2,11 +2,11 @@ class Ride < ActiveRecord::Base
 	has_many :seats
 	has_one :user, :foreign_key => "driver_id"
     
-    def closest_from(from_lat, from _lon)
-        Ride.sort do |a,b| 
-            euc_dist(from_lat, from_lon, a.from_lat, a.from_lon)
-            <=> 
-            euc_dist(from_lat, from_lon, b.from_lat, b.from_lon)
+    def self.closest_from(from_lat, from_lon)
+        #TODO: use scope instead
+        Ride.all.sort do |a,b| 
+            #euc_dist(from_lat, from_lon, a.from_lat, a.from_lon) <=> euc_dist(from_lat, from_lon, b.from_lat, b.from_lon)
+            3 <=> 3
         end
 =begin
         @rides = Rides.find(:all, :order =>  ,:limit =>10)
