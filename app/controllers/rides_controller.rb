@@ -27,7 +27,7 @@ class RidesController < ApplicationController
     @ride = Ride.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html { render :layout => false }
       format.json { render json: @ride }
     end
   end

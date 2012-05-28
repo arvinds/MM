@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /**
  * MapManager class
  * Wrapper to MapMarkerg libraries to allow for atomicity of mapMarkerg code
