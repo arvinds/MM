@@ -206,8 +206,7 @@ div.sign-in-buttons {
 	margin: 10px auto;
 	
 }
-
-div.whitebox {
+.whitebox {
 	float:left;
 	margin:20px; 
 	border:1px solid #DDD;
@@ -217,4 +216,7 @@ div.whitebox {
 	box-shadow: inset 0px 0px 5px 0px #999;
 	overflow:hidden;
 }
->>>>>>> 727502d3f97551059bcefb319d1288578cfa3432
+
+.fnone {
+	float:none;
+}

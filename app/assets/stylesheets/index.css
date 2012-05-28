@@ -51,6 +51,8 @@ div.rides-loading > div {
 	padding : 0px;
 }
 
+=======
+>>>>>>> 5b25159f88f0bed17c8302670b6c3e298660740d
 h3 {
 	padding-bottom: 10px;
 }
@@ -79,17 +81,16 @@ div.to{
 	float:right;
 }
 
-div.rides-loading {
+div.subpage-loading {
 	opacity : 0;
 	padding : 20px;
 }
 
-div.rides-loading > div {
+div.subpage-loading > div {
 	margin : 5px 0px;
 }
 
-#rides_list {
-	float:none;
+#subpage {
 	display:none;
 	padding : 0px;
 }
