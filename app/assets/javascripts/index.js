@@ -96,19 +96,39 @@ function loadSubpage(options) {
 	var $subpageLoad = $('div.subpage-loading');
 	
 	var fetchFunction = function() {
-		$subpageContent.stop().animate({ opacity : 0 }, 300, function() {
+		var previousHeight = $subpage.height();
+		$subpage.css('height', previousHeight + "px");
+		$subpageContent.stop().animate({ opacity : 0 }, 100, function() {
 			$(this).addClass('hidden');
-			$subpageLoad.stop().css({ opacity : 0 }).show().animate({ opacity : 1}, 300, function() {
-				$.ajax({
-					url : options.url,
-					dataType : 'html',
-					data : options.data,
-					success : function(data) {
-						$subpageLoad.stop().animate({ opacity : 0}, 300, function() {
-							$(this).hide();
-							$subpageContent.html('').append(data).removeClass('hidden').animate({ opacity : 1}, 300);
-						});
-					}
+			$subpageLoad.show();
+			$subpage.css('height', 'auto');
+			var newHeight = $subpage.height();
+			$subpage.css('height', previousHeight + "px");
+			$subpageLoad.hide();
+			$subpage.stop().animate({ height : newHeight + "px" }, 300, function() {
+				$subpageLoad.stop().css({ opacity : 0 }).show().animate({ opacity : 1}, 100, function() {
+					$.ajax({
+						url : options.url,
+						dataType : 'html',
+						data : options.data,
+						success : function(data) {
+							previousHeight = $subpage.height();
+							$subpage.css('height', previousHeight + "px");
+							$subpageLoad.stop().animate({ opacity : 0}, 100, function() {
+								$(this).hide();
+								// Grab the new height and animate to the new height
+								$subpage.css('height', 'auto');
+								$subpageContent.html('').append(data).removeClass('hidden');
+								newHeight = $subpage.height();
+								$subpage.css('height', previousHeight + "px");
+								$subpageContent.addClass('hidden');
+								$subpage.animate({ height : newHeight + "px" }, 300, function() {
+									$subpageContent.removeClass('hidden').animate({ opacity : 1}, 200);
+									$subpage.css('height', 'auto');
+								});
+							});
+						}
+					});
 				});
 			});
 		});

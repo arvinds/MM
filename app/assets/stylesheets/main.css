@@ -4,6 +4,8 @@ body {
 	font-family: "Lucida Grande","Lucida Sans Unicode",helvetica,verdana,arial,sans-serif;
 	background : url('back.png') #FFF;
 	font-size:12px;
+	overflow-y:scroll;
+	overflow-x : hidden;
 }
 
 header {
