@@ -90,11 +90,16 @@ Index.Main = {
 					from_lng : from_latlang.lng(),
 					to_lat : to_latlang.lat(),
 					to_lng : to_latlang.lng()
-				}
+				},
+				callback : function() {}
 			};
 			
 			if ($(this).attr('id') == 'post_ride') {
 				subpageOpts.url += "/new";
+				subpageOpts.callback = Rides.new.init;
+			} else {
+				subpageOpts.url += "/search";
+				subpageOpts.callback = Rides.search.init;
 			}
 			
 			Index.Main.loadSubpage(subpageOpts);
@@ -140,6 +145,9 @@ Index.Main = {
 									$subpage.animate({ height : newHeight + "px" }, 300, function() {
 										$subpageContent.removeClass('hidden').animate({ opacity : 1}, 200);
 										$subpage.css('height', 'auto');
+										if (options.callback) {
+											options.callback();
+										}
 									});
 								});
 							}

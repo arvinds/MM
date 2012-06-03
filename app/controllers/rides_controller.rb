@@ -1,4 +1,7 @@
 class RidesController < ApplicationController
+	# Allow param wrapping for json requests
+	wrap_parameters :format => :json
+
   # GET /rides
   # GET /rides.json
   def index
@@ -20,7 +23,6 @@ class RidesController < ApplicationController
       format.html { render :layout => false }
       format.json { render json: @rides }
     end
-	
 	
   end
 
