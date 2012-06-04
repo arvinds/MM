@@ -1,6 +1,7 @@
 class Ride < ActiveRecord::Base
 	has_many :seats
 	has_one :user, :foreign_key => "driver_id"
+
     
     def self.closest_from(from_lat, from_lon)
         #TODO: use scope instead

@@ -1,6 +1,5 @@
 class RidesController < ApplicationController
-	# Allow param wrapping for json requests
-	wrap_parameters :format => :json
+
 
   # GET /rides
   # GET /rides.json
@@ -57,6 +56,7 @@ class RidesController < ApplicationController
   # POST /rides
   # POST /rides.json
   def create
+
     @ride = Ride.new(params[:ride])
 
     respond_to do |format|
