@@ -1,4 +1,5 @@
 class Ride < ActiveRecord::Base
+	#PRABHU's COMMENT 2
 	has_many :seats
 	has_one :user, :foreign_key => "driver_id"
 
