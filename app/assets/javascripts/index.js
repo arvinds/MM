@@ -3,7 +3,6 @@ $(document).ready(function() {
 	var routePieces = getRelativeRoute(location.href);
 	
 	if (routePieces.length > 0) {
-	console.log(routePieces);
 		if (Index[ucfirst(routePieces[0])]) {
 			Index[ucfirst(routePieces[0])].init();
 		}
@@ -15,6 +14,9 @@ $(document).ready(function() {
 
 Index = {};
 
+/*
+ * Handles for '/' route
+ */
 Index.Main = {
 	init : function() {
 		var map = new MapManager(document.getElementById('map_container'));
@@ -96,10 +98,10 @@ Index.Main = {
 			
 			if ($(this).attr('id') == 'post_ride') {
 				subpageOpts.url += "/new";
-				subpageOpts.callback = Rides.new.init;
+				subpageOpts.callback = Rides.New.init;
 			} else {
 				subpageOpts.url += "/search";
-				subpageOpts.callback = Rides.search.init;
+				subpageOpts.callback = Rides.Search.init;
 			}
 			
 			Index.Main.loadSubpage(subpageOpts);

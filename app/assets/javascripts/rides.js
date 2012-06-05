@@ -1,18 +1,50 @@
 $(document).ready(function() {
 	
+	var routePieces = getRelativeRoute(location.href);
+	
+	if (routePieces.length > 0) {
+		if (Rides[ucfirst(routePieces[0])]) {
+			Rides[ucfirst(routePieces[0])].init();
+		}
+	}
 });
 
-Rides = {};
+var Rides = {};
 
-Rides.new = {
+/*
+ * Handles '/rides' route
+ */
+Rides.Rides = {
 	init : function() {
-		$('#create_ride').on ( 'click', function() {
-			ajaxPost('/rides', 'ride', { description : 'hello', 'ride_id' : 10 });
+	}
+};
+
+/*
+ * Handles '/rides/new' route
+ */
+Rides.New = {
+	init : function() {
+	
+		var ride = new Ride();
+	
+		$('#create_ride').on( 'click', function() {
+			ajaxPost({
+				url : '/rides',
+				model : 'ride',
+				modelData : {},
+				success : function(data){
+					console.log(data);
+				}
+			});
 		});
 	}
 };
 
-Rides.search = {
+Rides.Search = {
 	init : function() {
 	}
 };
+
+var Ride = function(){
+};
+

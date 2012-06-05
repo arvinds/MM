@@ -34,20 +34,22 @@ function ucfirst(string)
  * @param		model	string			model name, used for rails RESTful formatting of data
  * @param		data	string			data to send to server 
  */
-function ajaxPost(url, model, data) {
-	var postData = {};
-	postData[model] = data;
-
-	$.ajax({
+function ajaxPost(options) {
+	var postData = options.data || {};
+	var success = options.success;
+	var error = options.error || function(data) {
+		console.log(data);
+	};
+	postData[options.model] = options.modelData;
+	
+	var ajaxOptions = {
 		type : 'POST',
-		url : url,
+		url : options.url,
 		dataType : 'json',
 		data : postData,
-		success : function( data ) {
-			console.log(data);
-		},
-		error : function( data ) {
-			console.log(data);
-		}
-	});
+		success : error,
+		error : error
+	};
+
+	$.ajax(ajaxOptions);
 }
