@@ -2,13 +2,18 @@
 	<div class="rides-header">
 		Matching rides for <a id="from_link" class="loc-link" href="#from_link"><%= @request[:from_string] %></a> to <a id="to_link" class="loc-link" href="#to_link"><%= @request[:to_string] %></a>
 	</div>
-	<% @rides.each do |ride| %>
+    <style type="text/css">
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0 }
+    </style>
+
+	<% @rides.each_with_index do |ride,i| %>
 		<div class="ride">
           From: <%= ride.from_loc_str %><br/>
           <%= ride.from_loc_lat %>,<%= ride.from_loc_lon %><br/>
           To: <%= ride.to_loc_str %><br/>
           <%= ride.to_loc_lat %>,<%= ride.to_loc_lon %><br/>
 
-		<div>
+		</div>
 	<% end %>
 </div>

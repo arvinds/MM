@@ -1,4 +1,4 @@
 class Seat < ActiveRecord::Base
 	belongs_to :ride # the driver
-	has_one :user, :foreign_key => "rider_id"
+	belongs_to :user, :foreign_key => "rider_id", :class_name => "User"
 end

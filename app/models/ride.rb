@@ -1,8 +1,7 @@
 class Ride < ActiveRecord::Base
-	#PRABHU's COMMENT 2
 	has_many :seats
-	has_one :user, :foreign_key => "driver_id"
-
+	#has_one :user, :foreign_key => "driver_id"
+	belongs_to :user, :foreign_key => "driver_id", :class_name => "User"
     
     def self.closest_from(from_lat, from_lon)
         #TODO: use scope instead
@@ -19,6 +18,14 @@ class Ride < ActiveRecord::Base
 =end
     end
 
+    def driver=(driver)
+        user = driver  
+    end
+
+    def driver
+        user
+    end
+     
     def euc_dist(p1_lat, p1_lon, p2_lat, p2_lon)
         Math.sqrt((((p1_lat - p2_lat) ** 2) + ((p1_lon - p2_lon) ** 2)))
     end
