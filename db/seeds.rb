@@ -31,8 +31,8 @@ u = User.create(
 Ride.delete_all
 400.times do |i|
     Ride.create(
-        :from_loc_str => "from_place_#i",
-        :to_loc_str => "to_place_#i",
+        :from_loc_str => "from_place_#{i}",
+        :to_loc_str => "to_place_#{i}",
         :driver_id => u.id,
         #:driver => test_user,
         :from_loc_lon => rand_float_in_range(MIN_LON, MAX_LON),
