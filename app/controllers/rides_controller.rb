@@ -20,7 +20,7 @@ class RidesController < ApplicationController
 
     respond_to do |format|
       format.html { render :layout => false }
-      format.json { render json: @rides }
+#      format.json { render json: @rides, :layout => false  }
     end
 	
   end
