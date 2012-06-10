@@ -14,3 +14,59 @@ div.ride {
 	border : 1px solid #999;
 	height : 100px;
 }
+
+div.ride-input {
+	margin: 10px 0px;
+	width: 672px;
+}
+
+div.ride-input .group {
+	margin:15px 0px;
+}
+
+div.ride-input input[type='text']{
+	border-radius: 1px;
+	text-align:right;
+}
+
+div.ride-input label {
+	text-align:left;
+	vertical-align:top;
+	cursor:pointer;
+}
+
+div.ride-input textarea {
+	text-align:left;
+	vertical-align:top;
+	width: 450px;
+	height : 100px;
+	resize:none;
+	border-radius:1px;
+}
+
+div.ride-input .label {
+	float:left;
+	width: 200px;
+	text-align:left;
+	padding: 5px;
+}
+div.ride-input .value {
+	float:left;
+	text-align:left;
+}
+
+div.passenger-currency {
+	float:right;
+	padding: 0px 2px;
+	font-weight:bold;
+}
+
+#passenger_number, #passenger_price {
+	width: 50px;
+}
+
+#add_ride {
+	float:right;
+	margin-right:0px;
+}
+

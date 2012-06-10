@@ -2,5 +2,41 @@
 	<div class="rides-header">
 		Posting a ride from <a id="from_link" class="loc-link" href="#from_link"><%= @request[:from_string] %></a> to <a id="to_link" class="loc-link" href="#to_link"><%= @request[:to_string] %></a>
 	</div>
-	<button id="create_ride" class="black-button">Create Ride</button>
+	<div class="ride-input">
+		<input type="hidden" id="from_lat" value="<%= @request[:from_lat] %>" />
+		<input type="hidden" id="from_lng" value="<%= @request[:from_lng] %>" />
+		<input type="hidden" id="to_lat" value="<%= @request[:to_lat] %>" />
+		<input type="hidden" id="to_lng" value="<%= @request[:to_lng] %>" />
+		<div class="group">
+			<div class="label">
+				<label for="passenger_number">Number of Passengers :</label>
+			</div>
+			<div class="value">
+				<input type="text" id="passenger_number" />
+			</div>
+			<div style="clear:both"></div>
+		</div>
+		<div class="group">
+			<div class="label">
+				<label for="passenger_price">Price per passenger :</label>
+				<div class="passenger-currency">$</div>
+			</div>
+			<div class="value">
+				<input type="text" id="passenger_price" />
+			</div>
+			<div style="clear:both"></div>
+		</div>
+		<div class="group">
+			<div class="label">
+				<label for="description">About this trip :</label>
+			</div>
+			<div class="value">
+				<textarea id="description" placeholder="Make this trip fun! Tell your passengers what you'd like to do on this trip, what kind of music you like..."></textarea>
+			</div>
+			<div style="clear:both"></div>
+		</div>
+		<button id="add_ride" class="black-button">Add Ride</button>
+		<div style="clear:both"></div>
+	</div>
+
 </div>

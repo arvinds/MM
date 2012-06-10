@@ -144,8 +144,8 @@ Index.Main = {
 									newHeight = $subpage.height();
 									$subpage.css('height', previousHeight + "px");
 									$subpageContent.addClass('hidden');
-									$subpage.animate({ height : newHeight + "px" }, 300, function() {
-										$subpageContent.removeClass('hidden').animate({ opacity : 1}, 200);
+									$subpage.animate({ height : newHeight + "px" }, 200, function() {
+										$subpageContent.removeClass('hidden').animate({ opacity : 1}, 100);
 										$subpage.css('height', 'auto');
 										if (options.callback) {
 											options.callback();
