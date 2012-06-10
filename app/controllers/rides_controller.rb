@@ -3,7 +3,7 @@ class RidesController < ApplicationController
 
   # GET /rides
   # GET /rides.json
-  def index
+  def search
     @rides = Ride.closest_from [:from_lat], params[:from_lng]
     @request = params
 

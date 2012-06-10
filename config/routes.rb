@@ -2,10 +2,12 @@ MM::Application.routes.draw do
 
   get "user_sessions/new"
 
-  resources :rides
+  resources :rides do
+    get :search, :on => :collection
+  end
 
   resources :user_sessions
-
+  
   match 'login' => "user_sessions#new",      :as => :login
   match 'logout' => "user_sessions#destroy", :as => :logout
 
