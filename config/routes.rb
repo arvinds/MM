@@ -28,6 +28,13 @@ MM::Application.routes.draw do
 
   resources :users
 
+  #pr
+  get "payments/index"
+  get "payments/confirm"
+  post "payments/complete"
+  get "payments/checkout"
+  #end-pr
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

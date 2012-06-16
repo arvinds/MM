@@ -34,4 +34,9 @@ MM::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  #pr
+  ActiveMerchant::Billing::Base.mode = :test
+  #end_pr
+
 end

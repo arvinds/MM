@@ -57,3 +57,7 @@ gem "authlogic"
 #gem "oauth"
 #gem "oauth2"
 #gem "authlogic-connect"
+
+#pr
+gem "activemerchant"
+#end_pr
