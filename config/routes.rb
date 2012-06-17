@@ -11,7 +11,6 @@ MM::Application.routes.draw do
   match 'login' => "user_sessions#new",      :as => :login
   match 'logout' => "user_sessions#destroy", :as => :logout
 
-
   root :to => 'index#index'
   
   # About page
@@ -27,13 +26,12 @@ MM::Application.routes.draw do
   end
 
   resources :users
-
-  #pr
-  get "payments/index"
-  get "payments/confirm"
-  post "payments/complete"
-  get "payments/checkout"
-  #end-pr
+  
+  # Payments routes
+  match 'pay' => 'payments#index'
+  match 'pay/confirm' => 'payments#confirm'
+  match 'pay/complete' => 'payments#complete'
+  match 'pay/checkout' => 'payments#checkout'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

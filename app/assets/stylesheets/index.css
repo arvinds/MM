@@ -78,3 +78,7 @@ div.subpage-loading > div {
 #selection_box input[type='text'] {
 	border-radius: 0px 5px 5px 0px;
 }
+
+div.whitebox {
+	float:left;
+}
