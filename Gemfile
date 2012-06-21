@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.1'
 
-# Bundle edge Rails instead:
+# iBundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development do
@@ -10,7 +10,7 @@ group :development do
 end
 
 group :production do
-	gem 'pg'
+#	gem 'pg'
 end
 
 
