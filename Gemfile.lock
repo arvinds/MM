@@ -77,8 +77,6 @@ GEM
     nifty-generators (0.4.6)
     nokogiri (1.5.3)
     nokogiri (1.5.3-x86-mingw32)
-    pg (0.13.2)
-    pg (0.13.2-x86-mingw32)
     polyglot (0.3.3)
     rack (1.4.1)
     rack-cache (1.2)
@@ -140,7 +138,6 @@ DEPENDENCIES
   jquery-rails
   mocha
   nifty-generators (>= 0.4.0)
-  pg
   rails (= 3.2.1)
   rails3-generators
   sass-rails (~> 3.2.3)

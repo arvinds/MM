@@ -75,10 +75,14 @@ div.subpage-loading > div {
 	padding : 0px;
 }
 
+#selection_box {
+	width : 250px;
+	margin:auto;
+}
+
 #selection_box input[type='text'] {
 	border-radius: 0px 5px 5px 0px;
 }
 
 div.whitebox {
-	float:left;
 }
