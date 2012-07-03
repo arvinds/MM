@@ -26,13 +26,6 @@ ActiveRecord::Schema.define(:version => 20120602045737) do
 
   add_index "access_tokens", ["key"], :name => "index_access_tokens_on_key", :unique => true
 
-  create_table "offers", :force => true do |t|
-    t.integer  "ride_slot_id"
-    t.integer  "user_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-  end
-
   create_table "rides", :force => true do |t|
     t.integer  "driver_id"
     t.string   "from_loc_str"
@@ -71,21 +64,6 @@ ActiveRecord::Schema.define(:version => 20120602045737) do
 
   add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
-
-  create_table "slots", :force => true do |t|
-    t.integer  "ride_slot_id"
-    t.integer  "user_id"
-    t.string   "from_loc_str"
-    t.string   "to_loc_str"
-    t.date     "from_datetime"
-    t.date     "to_datetime"
-    t.boolean  "from_flexible"
-    t.boolean  "to_flexible"
-    t.integer  "price"
-    t.integer  "number_of_seats"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
-  end
 
   create_table "users", :force => true do |t|
     t.string   "first_name"

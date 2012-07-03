@@ -1,0 +1,47 @@
+user_sessions_new GET    /user_sessions/new(.:format)             user_sessions#new
+     search_rides GET    /rides/search(.:format)                  rides#search
+            rides GET    /rides(.:format)                         rides#index
+                  POST   /rides(.:format)                         rides#create
+         new_ride GET    /rides/new(.:format)                     rides#new
+        edit_ride GET    /rides/:id/edit(.:format)                rides#edit
+             ride GET    /rides/:id(.:format)                     rides#show
+                  PUT    /rides/:id(.:format)                     rides#update
+                  DELETE /rides/:id(.:format)                     rides#destroy
+    user_sessions GET    /user_sessions(.:format)                 user_sessions#index
+                  POST   /user_sessions(.:format)                 user_sessions#create
+ new_user_session GET    /user_sessions/new(.:format)             user_sessions#new
+edit_user_session GET    /user_sessions/:id/edit(.:format)        user_sessions#edit
+     user_session GET    /user_sessions/:id(.:format)             user_sessions#show
+                  PUT    /user_sessions/:id(.:format)             user_sessions#update
+                  DELETE /user_sessions/:id(.:format)             user_sessions#destroy
+            login        /login(.:format)                         user_sessions#new
+           logout        /logout(.:format)                        user_sessions#destroy
+             root        /                                        index#index
+            about        /about(.:format)                         index#about
+       howitworks        /howitworks(.:format)                    index#howitworks
+            terms        /terms(.:format)                         index#terms
+       ride_seats GET    /rides/:ride_id/seats(.:format)          seats#index
+                  POST   /rides/:ride_id/seats(.:format)          seats#create
+    new_ride_seat GET    /rides/:ride_id/seats/new(.:format)      seats#new
+   edit_ride_seat GET    /rides/:ride_id/seats/:id/edit(.:format) seats#edit
+        ride_seat GET    /rides/:ride_id/seats/:id(.:format)      seats#show
+                  PUT    /rides/:ride_id/seats/:id(.:format)      seats#update
+                  DELETE /rides/:ride_id/seats/:id(.:format)      seats#destroy
+                  GET    /rides(.:format)                         rides#index
+                  POST   /rides(.:format)                         rides#create
+                  GET    /rides/new(.:format)                     rides#new
+                  GET    /rides/:id/edit(.:format)                rides#edit
+                  GET    /rides/:id(.:format)                     rides#show
+                  PUT    /rides/:id(.:format)                     rides#update
+                  DELETE /rides/:id(.:format)                     rides#destroy
+            users GET    /users(.:format)                         users#index
+                  POST   /users(.:format)                         users#create
+         new_user GET    /users/new(.:format)                     users#new
+        edit_user GET    /users/:id/edit(.:format)                users#edit
+             user GET    /users/:id(.:format)                     users#show
+                  PUT    /users/:id(.:format)                     users#update
+                  DELETE /users/:id(.:format)                     users#destroy
+              pay        /pay(.:format)                           payments#index
+      pay_confirm        /pay/confirm(.:format)                   payments#confirm
+     pay_complete        /pay/complete(.:format)                  payments#complete
+     pay_checkout        /pay/checkout(.:format)                  payments#checkout

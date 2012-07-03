@@ -13,4 +13,15 @@ class User < ActiveRecord::Base
         "#{first_name} #{last_name}"
     end
 
+
+    def self.create_user(fbid,fname,lname,email)
+        user = User.new()
+        user.id = fbid.to_i #TODO: do this right
+        user.first_name = fname
+        user.last_name = lname
+        user.email = email
+        user.save!
+        return user.id
+    end
+
 end

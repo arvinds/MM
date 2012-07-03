@@ -75,10 +75,11 @@ class UsersController < ApplicationController
   end
 
   def show
+   # puts "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB"
     puts "SESSION: #{session.inspect}"
-    puts @current_user.access_tokens.inspect
+   # puts @current_user.access_tokens.inspect
     @user = @current_user
-    @profile = @user.profile
+    #@profile = @user.profile
   end
 
   def edit
@@ -86,17 +87,15 @@ class UsersController < ApplicationController
   end
 
   def update
-    return create unless @current_user
-    @user = @current_user # makes our views "cleaner" and more consistent
-    @user.update_attributes(params[:user]) do |result|
-      if result
-        flash[:notice] = "Account updated!"
-        redirect_to profile_url(@user)
-      else
-        raise @user.errors.inspect
-        render :action => :edit
-      end
+    @user = @current_user 
+    if @user.update_attributes(params[:user])
+      flash[:notice] = "Account updated!"
+      redirect_to user_path @user
+    else
+      flash[:notice] = "There was an error updating your profile!"
+      render :action => :edit
     end
   end
+
 end  
 

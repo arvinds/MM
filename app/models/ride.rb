@@ -5,6 +5,9 @@ class Ride < ActiveRecord::Base
     attr_accessible :from_loc_str, :from_loc_lat, :from_loc_lon, :to_loc_str, :to_loc_lat, :to_loc_lon, :driver_id, :from_datetime, :to_datetime
 
     def self.find_best_routes(from_lat, from_lon, to_lat, to_lon)
+      if Ride.all.length == 0
+        return []
+      end
       Ride.all.sort do |a,b| 
         delta_from_a = a.euc_dist_to_from_loc(from_lat, from_lon)
         delta_from_b = b.euc_dist_to_from_loc(from_lat, from_lon)
