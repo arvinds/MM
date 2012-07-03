@@ -33,7 +33,7 @@ class UserSessionsController < ApplicationController
   def fb
     app_id = "394401523931734"
     app_secret = "af45369fa25fd1684832427b971787a8"
-    callback_url = "http://localhost:3000/fb"
+    callback_url = "http://smooth-summer-7897.herokuapp.com/fb"
 
 
     code = params[:code] 
