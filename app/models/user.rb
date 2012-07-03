@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
 
     def self.create_user(fbid,fname,lname,email)
         user = User.new()
-        user.id = fbid.to_i #TODO: do this right
+        user.id = rand(999999)#fbid.to_i #TODO: do this right
         user.first_name = fname
         user.last_name = lname
         user.email = email
