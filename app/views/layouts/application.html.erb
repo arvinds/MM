@@ -16,19 +16,12 @@
     </script>
   </head>
   <body>
-    <!-- taken from huch.com's image. I'm assuming this is a publicly available image -->
-    <% if current_user.nil? %>
-        <a style="text-decoration:none;background-attachment:scroll;background-clip:border-box;background-color:transparent;background-image:none;background-origin:padding-box;background-repeat:no-repeat;position: relative; top: 6%" class="left imga" href="/fb" rel="nofollow"><img style="background-color: white;" src="http://ak.imgag.com/imgag/eg/new_site/fb_connect.png" alt="Connect with Facebook"></a>
-    <% else %>
-        <a href="/logout">Logout</a>
-        <a href="/users/<%=current_user.id%>"><%=current_user.name%></a>
-    <% end %>
-    
-
 	<div class="content">
 		<header>
-			<div class='centerbox'>
-				<div style="clear:both"></div>
+			<div class="splash-header">
+				<button id="sign_in" class="blue-button">
+					Sign In
+				</button>
 			</div>
 		</header>
 		<div id="page" class="centerbox">

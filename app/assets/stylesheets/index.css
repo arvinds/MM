@@ -37,7 +37,7 @@ h3 {
 }
 
 #to_from_container {
-	width: 250px;
+	width: 280px;
 	height:200px;
 	text-align:center;
 	position:relative;
@@ -76,12 +76,21 @@ div.subpage-loading > div {
 }
 
 #selection_box {
-	width : 250px;
+	width : 280px;
 	margin:auto;
 }
 
 #selection_box input[type='text'] {
 	border-radius: 0px 5px 5px 0px;
+}
+
+div.action-container {
+	position:absolute;
+	bottom:0px;
+}
+
+div.action-container > button {
+	width: 120px;
 }
 
 div.whitebox {

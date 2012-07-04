@@ -1,7 +1,7 @@
 body {
 	padding :0px;
 	margin: 0px;
-	font-family: "Lucida Grande","Lucida Sans Unicode",helvetica,verdana,arial,sans-serif;
+	font-family: verdana, helvetica, arial,sans-serif;
 	/*background : url('back.png') #FFF;*/
 	font-size:12px;
 	overflow-y:scroll;
@@ -14,15 +14,16 @@ header {
 	width: 1000px;
 	margin-bottom:10px;
 	font-weight:bold;
-	padding: 10px;
+	padding: 0px;
 	margin: auto auto 10px;
+	text-align:center;
 }
 
 input[type='text'] {
 	margin:0px;
 	border:0px;
 	padding:5px;
-	width: 163px;
+	width: 193px;
 	border:1px solid #999;
 	border-radius: 5px;
 	background: #FFF;
@@ -55,17 +56,50 @@ a:hover {
 button {
 	border:0px;
 	margin:10px;
-	border-radius:5px;
+	border-radius:0px;
 	padding: 0px 10px;
+	cursor:pointer;
+	color: #FFF;
+	background: #4E84C5;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+	border-bottom: 1px solid rgba(0,0,0,0.25);
+	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.4);
+	border-radius:4px;
+	font-size:16px;
+	font-family : Ariel;
+	font-weight:bold;
+}
+
+button.blue-button {
+	float:left;
+	line-height:16px;
+	padding:10px;
+	background:#56A9F5;
+	background: -moz-linear-gradient(center top , #56A9F5, #2065B7) repeat scroll 0 0 transparent;
+	background: -webkit-gradient(linear, left top, left bottom, from(#56A9F5), to(#2065B7));
+}
+
+button.blue-button:hover {
+	background: #89C6FF;
+	background: -moz-linear-gradient(center top , #89C6FF, #2065B7) repeat scroll 0 0 transparent;
+	background: -webkit-gradient(linear, left top, left bottom, from(#89C6FF), to(#2065B7));
+}
+
+button.blue-button:active {
+	background:#56A9F5;
+	background: -moz-linear-gradient(center top , #56A9F5, #2065B7) repeat scroll 0 0 transparent;
+	background: -webkit-gradient(linear, left top, left bottom, from(#56A9F5), to(#2065B7));
 	cursor:pointer;
 }
 
 button.black-button {
-	width:100px;
 	float:left;
-	color:#FFF;
+	line-height:16px;
+	padding:10px;
 	background:#333;
-	line-height:28px;
 	background: -moz-linear-gradient(top,  #555,  #000E00);
 	background: -webkit-gradient(linear, left top, left bottom, from(#555), to(#000E00));
 }
@@ -82,6 +116,51 @@ button.black-button:active {
 	background: -webkit-gradient(linear, left top, left bottom, from(#555), to(#000E00));
 	cursor:pointer;
 }
+
+button.green-button {
+	float:left;
+	line-height:16px;
+	padding:10px;
+	background: #74D639;
+	background: -moz-linear-gradient(center top , #74D639, #2A8013) repeat scroll 0 0 transparent;
+	background: -webkit-gradient(linear, left top, left bottom, from(#74D639), to(#2A8013));
+}
+button.green-button:hover {
+	background: #92E75F;
+	background: -moz-linear-gradient(center top , #92E75F, #2A8013) repeat scroll 0 0 transparent;
+	background: -webkit-gradient(linear, left top, left bottom, from(#92E75F), to(#2A8013));
+}
+
+button.green-button:active {
+	background: #74D639;
+	background: -moz-linear-gradient(center top , #74D639, #2A8013) repeat scroll 0 0 transparent;
+	background: -webkit-gradient(linear, left top, left bottom, from(#74D639), to(#2A8013));
+	cursor:pointer;
+}
+
+button.orange-button {
+	float:left;
+	line-height:16px;
+	padding:10px;
+	background: #fab619;
+	background: -moz-linear-gradient(center top , #fab619, #AD8324) repeat scroll 0 0 transparent;
+	background: -webkit-gradient(linear, left top, left bottom, from(#fab619), to(#AD8324));
+}
+
+button.orange-button:hover {
+	background: #FFCE5F;
+	background: -moz-linear-gradient(center top , #FFCE5F, #AD8324) repeat scroll 0 0 transparent;
+	background: -webkit-gradient(linear, left top, left bottom, from(#FFCE5F), to(#AD8324));
+}
+
+button.orange-button:active {
+	background: #fab619;
+	background: -moz-linear-gradient(center top , #fab619, #AD8324) repeat scroll 0 0 transparent;
+	background: -webkit-gradient(linear, left top, left bottom, from(#fab619), to(#AD8324));
+	cursor:pointer;
+}
+
+
 
 #page {
 	text-align:right;
@@ -107,8 +186,8 @@ div.input-label {
 	background:#333;
 	border-radius: 5px 0px 0px 5px;
 	line-height:28px;
-	background: -moz-linear-gradient(top,  #555,  #000E00);
-	background: -webkit-gradient(linear, left top, left bottom, from(#555), to(#000E00));	
+	background : -moz-linear-gradient(center top , #777, #333) repeat scroll 0 0 transparent;
+	background: -webkit-gradient(linear, left top, left bottom, from(#777), to(#333));	
 }
 
 div.input-label:before, div.input-label:after {
@@ -168,24 +247,11 @@ div.h-separator{
 /* Sign in */
 
 #sign_in {
-	font-weight:normal;
-	color : #EEE;
+	float:none;
+	font-size:14px;
+	font-weight:bold;
 	text-decoration:none;
-	padding:2px 5px;
-	background: #003556;
-	background: -moz-linear-gradient(center top , #007AD0, #003556) repeat scroll 0 0 transparent;
-	background: -webkit-gradient(linear, left top, left bottom, from( #007AD0), to(#003556));
-	border-radius:2px;
-}
-
-#sign_in:hover{
-	background: -moz-linear-gradient(center top, #007AD0, #001826);
-	background: -webkit-gradient(linear, left top, left bottom, from( #007AD0), to(#001826));
-}
-
-#sign_in:active{
-	background: -moz-linear-gradient(center top, #007AD0, #111);
-	background: -webkit-gradient(linear, left top, left bottom, from( #007AD0), to(#111));
+	padding:5px 5px;
 }
 
 #sign_in_dropdown {
@@ -228,6 +294,12 @@ div.sign-in-buttons {
 	text-align:center;
 	box-shadow: inset 0px 0px 5px 0px #999;
 	overflow:hidden;
+}
+
+div.splash-header {
+	width:75%;
+	text-align:right;
+	margin:auto;
 }
 
 .fnone {
